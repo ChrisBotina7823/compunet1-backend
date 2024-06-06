@@ -5,7 +5,8 @@ import productsRoutes from './routes/products.routes.js';
 import cartRoutes from './routes/cart.routes.js';
 import authRoutes from './routes/auth.routes.js';
 
-import generateData from './util/generateData.js';
+import generateData from './util/generateData.js'
+import cors from 'cors';
 
 
 // Initialize server
@@ -35,3 +36,5 @@ app.use('/auth', authRoutes);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+
