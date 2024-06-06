@@ -7,11 +7,12 @@ import authRoutes from './routes/auth.routes.js';
 
 import generateData from './util/generateData.js'
 import cors from 'cors';
-
+import { config } from 'dotenv';
+config();
 
 // Initialize server
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: '*', 
