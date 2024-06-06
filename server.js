@@ -12,16 +12,13 @@ import generateData from './util/generateData.js';
 const app = express();
 const port = 3000;
 
-// Middleware
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-  });
-  
+const corsOptions = {
+  origin: '*', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+  allowedHeaders: ['Content-Type', 'Authorization'] 
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
